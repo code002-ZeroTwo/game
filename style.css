@@ -77,3 +77,11 @@ body {
     text-align: center;
     margin-top: 20px;
 }
+
+.tie {
+    text-align: center;
+    padding: 2rem;
+    height: 25px;
+    background-color: rgb(55, 55, 207);
+    
+}

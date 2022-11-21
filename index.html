@@ -36,6 +36,8 @@
             <p class="Pscore">0</p>
         </div>
     </div>
+
+    <div class="tie"></div>
     <div class="div">
         here who won will appear!
     </div>
@@ -51,6 +53,7 @@
         let div = document.querySelector('.div');
         let computerScore = document.querySelector('.Cscore');
         let playerScore = document.querySelector('.Pscore');
+        let tie = document.querySelector('.tie');
 
         
 
@@ -76,23 +79,27 @@
         function play(str){
             let computerInput = getComputerInput();
             if(computerInput == str){
-                
+                tie.textContent = 'its a tie!!';
             }
             else if(computerInput == 'scissor' && str == 'paper'){
                 computer++;
                 computerScore.textContent = computer;
+                tie.textContent ='';
             }
             else if(computerInput='rock' && str == 'scissor'){
                 computer++;
                 computerScore.textContent = computer;
+                tie.textContent ='';
             }
             else if(computerInput== 'paper' && str == 'rock'){
                 computer++;
                 computerScore.textContent = computer;
+                tie.textContent ='';
             }
             else{
                 player++;
                 playerScore.textContent = player;
+                tie.textContent ='';
             }
             
             

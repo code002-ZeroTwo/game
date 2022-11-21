@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>janken</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    
+    <div class="first">
+        <h1>scissor paper rock</h1>
+    </div>
+    <div class="second">
+        <button id="scissor">scissor</button>
+        <button id="paper">paper</button>
+        <button id="rock">rock</button>
+    </div>
+    <div class="third">
+    <button>play any button</button>
+    </div>
+    
+    <div class="pre-fourth">scoreboard</div> 
+    <div class="fourth">
+       
+        <div>
+            <p>computer score</p>
+            <p class="Cscore">0</p>
+        </div>
+
+        <div>
+            <p>
+                player score
+            </p>
+            <p class="Pscore">0</p>
+        </div>
+    </div>
+    <div class="div">
+        here who won will appear!
+    </div>
+</body>
+
+    <script>
+        const button = document.querySelector('#scissor');
+        const button1= document.querySelector('#paper');
+        const button2= document.querySelector('#rock');
+        let computer =0;
+        let player=0;
+
+        let div = document.querySelector('.div');
+        let computerScore = document.querySelector('.Cscore');
+        let playerScore = document.querySelector('.Pscore');
+
+        
+
+        button.addEventListener('click', function(){play(button.textContent)});
+        button1.addEventListener('click', function(){play(button1.textContent)});
+        button2.addEventListener('click', function(){play(button2.textContent)});
+
+
+        function getComputerInput(){
+            let random = Math.floor(Math.random() * 3);
+
+            if (random == 0){
+                return 'scissor';
+            }
+            else if(random == 1){
+                return 'paper';
+            }
+            else {
+                return 'rock';
+            }
+        }
+
+        function play(str){
+            let computerInput = getComputerInput();
+            if(computerInput == str){
+                
+            }
+            else if(computerInput == 'scissor' && str == 'paper'){
+                computer++;
+                computerScore.textContent = computer;
+            }
+            else if(computerInput='rock' && str == 'scissor'){
+                computer++;
+                computerScore.textContent = computer;
+            }
+            else if(computerInput== 'paper' && str == 'rock'){
+                computer++;
+                computerScore.textContent = computer;
+            }
+            else{
+                player++;
+                playerScore.textContent = player;
+            }
+            
+            
+        
+            if(player == 5){
+                div.textContent = 'player has won the game!!';
+                player = 0;
+                computer =0;
+                playerScore.textContent = '0';
+                computerScore.textContent = '0';
+            }
+            else if(computer == 5){
+                div.textContent = 'computer has won the game!!';
+                computer =0;
+                player =0;
+                playerScore.textContent = '0';
+                computerScore.textContent = '0';
+            }
+        }
+
+        
+
+        
+        
+    </script>
+</html>

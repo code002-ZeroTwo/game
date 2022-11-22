@@ -61,7 +61,6 @@ body {
     display: flex;
     gap: 4rem;
     justify-content: center;
-    color:rgb(13, 13, 214);
     background-color: rgb(25, 25, 126);
 }
 

@@ -63,12 +63,12 @@
 
 
         function getComputerInput(){
-            let random = Math.floor(Math.random() * 3);
+            let random = Math.floor(Math.random() * 30);
 
-            if (random == 0){
+            if (random <= 10){
                 return 'scissor';
             }
-            else if(random == 1){
+            else if(random <= 20 && random >= 10){
                 return 'paper';
             }
             else {
@@ -78,20 +78,20 @@
 
         function play(str){
             let computerInput = getComputerInput();
-            if(computerInput == str){
+            if(computerInput === str){
                 tie.textContent = 'its a tie!!';
             }
-            else if(computerInput == 'scissor' && str == 'paper'){
+            else if(computerInput === 'scissor' && str === 'paper'){
                 computer++;
                 computerScore.textContent = computer;
                 tie.textContent ='';
             }
-            else if(computerInput='rock' && str == 'scissor'){
+            else if(computerInput==='rock' && str === 'scissor'){
                 computer++;
                 computerScore.textContent = computer;
                 tie.textContent ='';
             }
-            else if(computerInput== 'paper' && str == 'rock'){
+            else if(computerInput=== 'paper' && str === 'rock'){
                 computer++;
                 computerScore.textContent = computer;
                 tie.textContent ='';
